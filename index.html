@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta name="description" content="MaxNova Tech — IT Support and Web Design for small businesses. Remote IT support, Microsoft 365, and professional websites from £350."/>
 <title>MaxNova Tech · IT Support & Web Design</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'><rect width='34' height='34' rx='9' fill='%231e3a5f'/><path d='M9 24V10L17 19L25 10V24' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/></svg>"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -32,14 +33,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);border-bo
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .logo{font-size:1.1rem;font-weight:800;color:var(--navy);letter-spacing:-.3px}
 .logo span{color:var(--blue)}
-.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
 .nav-links a{font-size:.88rem;font-weight:500;color:var(--t2);transition:color .15s}
 .nav-links a:hover{color:var(--navy)}
 .nav-cta{background:var(--blue);color:#fff;padding:9px 20px;border-radius:7px;font-size:.88rem;font-weight:600;transition:background .15s;white-space:nowrap}
 .nav-cta:hover{background:var(--blue2)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .2s}
-.mobile-menu{display:none;position:fixed;inset:64px 0 0;background:#fff;z-index:99;padding:24px;flex-direction:column;gap:4px;border-top:1px solid var(--border)}
+.mobile-menu{display:none;position:fixed;inset:64px 0 0;background:#fff;z-index:99;padding:24px;flex-direction:column;gap:4px;border-top:1px solid var(--border);overflow-y:auto}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-size:1rem;font-weight:500;color:var(--t2);padding:12px 0;border-bottom:1px solid var(--border)}
 .mobile-menu .mcta{margin-top:12px;background:var(--blue);color:#fff;padding:14px;border-radius:8px;text-align:center;font-weight:600;border:none}
@@ -69,10 +70,20 @@ section{padding:80px 24px}
 .section-sub{font-size:1rem;color:var(--t2);max-width:560px;line-height:1.7}
 .centered{text-align:center} .centered .section-sub{margin:0 auto}
 
+/* HOW IT WORKS */
+#how{background:var(--grey)}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;position:relative}
+.steps-grid::before{content:'';position:absolute;top:32px;left:calc(16.66% + 16px);right:calc(16.66% + 16px);height:2px;background:linear-gradient(90deg,var(--blue),var(--blue2));opacity:.3;pointer-events:none}
+.step-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px;text-align:center;position:relative;transition:all .2s}
+.step-card:hover{border-color:var(--blue);box-shadow:0 8px 30px rgba(14,165,233,.1);transform:translateY(-3px)}
+.step-num{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-size:1.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.step-title{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.step-desc{font-size:.88rem;color:var(--t2);line-height:1.7}
+
 /* SERVICES */
-#services{background:var(--grey)}
+#services{background:var(--white)}
 .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
-.svc-block{background:#fff;border:1px solid var(--border);border-radius:14px;padding:36px;transition:all .2s}
+.svc-block{background:var(--grey);border:1px solid var(--border);border-radius:14px;padding:36px;transition:all .2s}
 .svc-block:hover{border-color:var(--blue);box-shadow:0 8px 30px rgba(14,165,233,.12);transform:translateY(-3px)}
 .svc-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
 .icon-blue{background:rgba(14,165,233,.1)}
@@ -83,7 +94,34 @@ section{padding:80px 24px}
 .svc-list li{display:flex;align-items:flex-start;gap:8px;font-size:.88rem;color:var(--t2)}
 .svc-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
 
+/* PORTFOLIO */
+#portfolio{background:var(--grey)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.portfolio-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .2s}
+.portfolio-card:hover{border-color:var(--blue);box-shadow:0 8px 30px rgba(14,165,233,.12);transform:translateY(-3px)}
+.portfolio-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative;overflow:hidden}
+.portfolio-thumb .pt-label{position:absolute;bottom:10px;right:12px;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.5px}
+.portfolio-body{padding:20px}
+.portfolio-title{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.portfolio-desc{font-size:.83rem;color:var(--t2);line-height:1.6;margin-bottom:14px}
+.portfolio-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.portfolio-tag{font-size:.72rem;font-weight:500;background:var(--grey);border:1px solid var(--border);border-radius:5px;padding:2px 8px;color:var(--t2)}
+.portfolio-link{font-size:.82rem;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:4px}
+.portfolio-link:hover{color:var(--blue2)}
+
+/* WHY ME */
+#why{background:var(--navy)}
+#why .section-label{color:rgba(255,255,255,.5)}
+#why .section-title{color:#fff}
+#why .section-sub{color:rgba(255,255,255,.6)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:48px}
+.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px}
+.why-icon{font-size:1.8rem;margin-bottom:14px}
+.why-title{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:6px}
+.why-desc{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.6}
+
 /* PRICING */
+#pricing{background:var(--white)}
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:48px}
 .price-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px;position:relative;transition:all .2s}
 .price-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
@@ -101,20 +139,21 @@ section{padding:80px 24px}
 .price-btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
 .price-btn.primary:hover{background:var(--blue2);border-color:var(--blue2)}
 
-/* WHY ME */
-#why{background:var(--navy)}
-#why .section-label{color:rgba(255,255,255,.5)}
-#why .section-title{color:#fff}
-#why .section-sub{color:rgba(255,255,255,.6)}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:48px}
-.why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px}
-.why-icon{font-size:1.8rem;margin-bottom:14px}
-.why-title{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:6px}
-.why-desc{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.6}
+/* FAQ */
+#faq{background:var(--grey)}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:12px;max-width:760px;margin-left:auto;margin-right:auto}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-q{width:100%;text-align:left;padding:20px 24px;font-size:.95rem;font-weight:600;color:var(--navy);background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Inter',sans-serif;transition:background .15s}
+.faq-q:hover{background:var(--grey)}
+.faq-q .arrow{font-size:.75rem;color:var(--t3);transition:transform .2s;flex-shrink:0}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 24px 20px;font-size:.9rem;color:var(--t2);line-height:1.8}
+.faq-item.open .faq-a{display:block}
 
 /* ABOUT */
+#about{background:var(--white)}
 .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;margin-top:48px}
-.about-img-placeholder{background:linear-gradient(135deg,var(--light),#dbeafe);border-radius:16px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:5rem}
+.about-img-placeholder{background:linear-gradient(135deg,var(--light),#dbeafe);border-radius:16px;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
 .about-label{font-size:.75rem;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
 .about-name{font-size:1.8rem;font-weight:800;color:var(--navy);margin-bottom:6px}
 .about-role{font-size:.95rem;color:var(--t2);margin-bottom:20px}
@@ -123,17 +162,24 @@ section{padding:80px 24px}
 .cert-chip{display:inline-flex;align-items:center;gap:5px;background:var(--grey);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-size:.78rem;font-weight:500;color:var(--navy)}
 .cert-chip::before{content:'🏆';font-size:.75rem}
 
+/* TESTIMONIALS */
+#testimonials{background:var(--grey)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.testi-placeholder{grid-column:1/-1;text-align:center;padding:48px 40px;border:2px dashed var(--border);border-radius:14px;background:#fff}
+.testi-placeholder p{font-size:.95rem;color:var(--t3);margin-bottom:16px}
+.testi-placeholder a{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;padding:11px 24px;border-radius:7px;font-size:.88rem;font-weight:600}
+.testi-placeholder a:hover{background:var(--blue2)}
+
 /* CONTACT */
-#contact{background:var(--grey)}
+#contact{background:var(--white)}
 .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;margin-top:48px}
-.contact-info{}
 .contact-info p{font-size:.92rem;color:var(--t2);line-height:1.8;margin-bottom:28px}
 .contact-detail{display:flex;align-items:flex-start;gap:12px;margin-bottom:20px}
 .cd-icon{width:40px;height:40px;border-radius:9px;background:rgba(14,165,233,.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
 .cd-label{font-size:.72rem;color:var(--t3);font-weight:500;margin-bottom:2px}
 .cd-val{font-size:.9rem;color:var(--navy);font-weight:500}
 .response{display:inline-flex;align-items:center;gap:6px;background:rgba(5,150,105,.08);color:var(--green);border:1px solid rgba(5,150,105,.2);border-radius:6px;padding:6px 12px;font-size:.8rem;font-weight:600;margin-top:8px}
-.form-box{background:#fff;border:1px solid var(--border);border-radius:14px;padding:36px}
+.form-box{background:var(--grey);border:1px solid var(--border);border-radius:14px;padding:36px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-group{margin-bottom:18px}
 .form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--navy);margin-bottom:6px}
@@ -158,10 +204,15 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
 .footer-links a:hover{color:#fff}
 .footer-copy{font-size:.8rem;width:100%;text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);margin-top:16px}
 
+@media(max-width:900px){
+  .portfolio-grid,.testi-grid,.steps-grid{grid-template-columns:1fr 1fr}
+  .steps-grid::before{display:none}
+  .testi-placeholder{grid-column:1/-1}
+}
 @media(max-width:768px){
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .services-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .services-grid,.about-grid,.contact-grid,.portfolio-grid,.testi-grid,.steps-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .about-img-placeholder{max-width:200px;margin:0 auto}
 }
@@ -182,7 +233,9 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -194,7 +247,9 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
   <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
   <a href="#contact" class="mcta" onclick="closeMenu()">Get a Free Quote</a>
@@ -215,6 +270,34 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
       <div class="trust-item"><span class="tick">✓</span> Microsoft 365 Certified</div>
       <div class="trust-item"><span class="tick">✓</span> Remote &amp; UK-wide</div>
       <div class="trust-item"><span class="tick">✓</span> Same-day response</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-inner">
+    <div class="centered">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">Getting started is simple. No long contracts, no confusing onboarding — just three easy steps.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">Get in Touch</div>
+        <p class="step-desc">Fill in the contact form or send me an email. Tell me what you need — even if you're not sure, just describe the problem and I'll figure it out.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title">Free Consultation</div>
+        <p class="step-desc">I'll get back to you the same day with a clear explanation of what needs doing and a fixed price. No obligations, no pressure — just an honest quote.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title">Problem Solved</div>
+        <p class="step-desc">I get to work and keep you updated throughout. Most remote IT issues are sorted within hours. Websites are delivered within agreed timelines.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -257,6 +340,67 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
           <li>Updates and changes included in first month</li>
           <li>Full handover — you own everything</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-inner">
+    <div class="centered">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Recent Work</h2>
+      <p class="section-sub">A selection of live sites I've designed and built. Each one is fast, mobile-friendly, and built from scratch.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,#1e3a5f,#0ea5e9)">
+          <span>🏫</span>
+          <span class="pt-label">LIVE SITE</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-title">Bright Roots Home Learning</div>
+          <p class="portfolio-desc">Full-stack homeschool management platform with login, lesson tracking, and curriculum integration.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">Next.js</span>
+            <span class="portfolio-tag">FastAPI</span>
+            <span class="portfolio-tag">PostgreSQL</span>
+          </div>
+          <a href="https://brightrootshomelearning.co.uk" target="_blank" rel="noopener" class="portfolio-link">View site →</a>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,#065f46,#059669)">
+          <span>📄</span>
+          <span class="pt-label">LIVE SITE</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-title">MaxNova CV &amp; Portfolio</div>
+          <p class="portfolio-desc">Clean, fast personal CV and portfolio site — built as a static site focusing on performance and simplicity.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">HTML/CSS</span>
+            <span class="portfolio-tag">JavaScript</span>
+            <span class="portfolio-tag">Static</span>
+          </div>
+          <a href="https://cv.maxnova.co.uk" target="_blank" rel="noopener" class="portfolio-link">View site →</a>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,#3730a3,#6366f1)">
+          <span>💼</span>
+          <span class="pt-label">THIS SITE</span>
+        </div>
+        <div class="portfolio-body">
+          <div class="portfolio-title">MaxNova Tech Business Site</div>
+          <p class="portfolio-desc">This site — a professional business landing page with contact form, pricing, portfolio and FAQ. Fast, mobile-first.</p>
+          <div class="portfolio-tags">
+            <span class="portfolio-tag">HTML/CSS</span>
+            <span class="portfolio-tag">JavaScript</span>
+            <span class="portfolio-tag">Formspree</span>
+          </div>
+          <a href="#" class="portfolio-link">You're looking at it →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -311,7 +455,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
         <ul class="price-features">
           <li>Remote support sessions</li>
           <li>New device setup</li>
-          <li>Email & software config</li>
+          <li>Email &amp; software config</li>
           <li>Virus removal</li>
           <li>No minimum hours</li>
         </ul>
@@ -361,6 +505,47 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="centered">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+      <p class="section-sub">Can't find what you're looking for? Just send me a message — I'm happy to answer anything.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you work on-site or only remotely? <span class="arrow">▼</span></button>
+        <div class="faq-a">Mostly remote — the vast majority of IT issues can be fixed via secure screen share without anyone needing to visit. Remote support is also faster and cheaper for you. For certain hardware issues I may recommend a local engineer, and I'm happy to advise on that.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What areas do you cover? <span class="arrow">▼</span></button>
+        <div class="faq-a">I work remotely with clients across the whole of the UK. My base is in Kirkcaldy, Scotland, but location doesn't matter for remote support or web design — I've helped businesses from Edinburgh to London.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I pay? <span class="arrow">▼</span></button>
+        <div class="faq-a">I accept bank transfer (BACS) and PayPal. For one-off jobs, payment is due on completion. For monthly retainers and hosting, I'll set up a simple monthly invoice. I'll always send a proper invoice with a clear breakdown of what was done.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does a website take to build? <span class="arrow">▼</span></button>
+        <div class="faq-a">A standard 5-page business website typically takes 1–2 weeks from the time I receive your content (text, images, logo). More complex sites with e-commerce or booking systems will take longer. I'll always give you a realistic timeline upfront before we start.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What if I need something that's not on your price list? <span class="arrow">▼</span></button>
+        <div class="faq-a">Just ask. My prices are a guide, not a rigid menu. If you need something specific — a custom quote, a bigger project, or something unusual — drop me a message and I'll come back to you with a fair price based on exactly what you need.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Will I own my website once it's built? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes, 100%. You own the code, the domain, and all the content. I'll hand everything over at the end of the project. If you ever want to move hosting away from me in the future, there's no lock-in and I'll help you do it.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">I'm not very technical — is that a problem? <span class="arrow">▼</span></button>
+        <div class="faq-a">Not at all — most of my clients aren't technical, and that's exactly why they hire me. I handle all the technical stuff and explain things in plain English. You don't need to know anything about computers or websites to work with me.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
@@ -384,12 +569,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
         <div class="about-label">About</div>
         <div class="about-name">Max Dorman</div>
         <div class="about-role">IT Technician &amp; Web Developer — Kirkcaldy, Scotland</div>
-        <p class="about-text">
-          I'm an IT technician in training with hands-on experience running my own home server lab — managing real deployments, security monitoring, cloud services, and web applications. I hold CompTIA A+ and four Microsoft certifications, with Network+ currently in progress.
-        </p>
-        <p class="about-text">
-          I work remotely across the UK and offer a personal, straight-talking service. No holding music, no ticket queues — just me, helping your business run better.
-        </p>
+        <p class="about-text">I'm an IT technician in training with hands-on experience running my own home server lab — managing real deployments, security monitoring, cloud services, and web applications. I hold CompTIA A+ and four Microsoft certifications, with Network+ currently in progress.</p>
+        <p class="about-text">I work remotely across the UK and offer a personal, straight-talking service. No holding music, no ticket queues — just me, helping your business run better.</p>
         <div class="cert-chips">
           <span class="cert-chip">CompTIA A+</span>
           <span class="cert-chip">MS-900: M365 Fundamentals</span>
@@ -397,6 +578,23 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
           <span class="cert-chip">Microsoft Cloud Support Associate</span>
           <span class="cert-chip">CompTIA Network+ (in progress)</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="centered">
+      <div class="section-label">Reviews</div>
+      <h2 class="section-title">What Clients Say</h2>
+      <p class="section-sub">Honest feedback from people I've helped. More reviews coming as the business grows.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-placeholder">
+        <p>Reviews will appear here as clients share their experience. Be the first!</p>
+        <a href="mailto:maxd@ittechs.io">Get in touch to get started →</a>
       </div>
     </div>
   </div>
@@ -445,17 +643,17 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
         <form id="contactForm" action="https://formspree.io/f/xbdvjozy" method="POST" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Your Name *</label>
-              <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
+              <label for="fname">Your Name *</label>
+              <input type="text" id="fname" name="name" placeholder="Jane Smith" required/>
             </div>
             <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="jane@example.com" required/>
+              <label for="femail">Email Address *</label>
+              <input type="email" id="femail" name="email" placeholder="jane@example.com" required/>
             </div>
           </div>
           <div class="form-group">
-            <label for="service">What do you need help with? *</label>
-            <select id="service" name="service" required>
+            <label for="fservice">What do you need help with? *</label>
+            <select id="fservice" name="service" required>
               <option value="" disabled selected>Choose a service...</option>
               <option>IT Support (one-off)</option>
               <option>Monthly IT Retainer</option>
@@ -465,8 +663,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Tell me more *</label>
-            <textarea id="message" name="message" placeholder="Describe what you need — as much or as little as you like..." required></textarea>
+            <label for="fmessage">Tell me more *</label>
+            <textarea id="fmessage" name="message" placeholder="Describe what you need — as much or as little as you like..." required></textarea>
           </div>
           <button type="submit" class="form-submit" id="submitBtn">Send Message →</button>
           <p class="form-note">I typically reply within a few hours. No spam, ever.</p>
@@ -482,9 +680,12 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
     <div class="footer-logo">MaxNova<span>Tech</span></div>
     <div class="footer-links">
       <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
     </div>
     <div class="footer-copy">
       © 2026 MaxNova Tech · Sole trader · Kirkcaldy, Scotland · maxd@ittechs.io
@@ -498,6 +699,13 @@ function toggleMenu(){
 }
 function closeMenu(){
   document.getElementById('mobileMenu').classList.remove('open');
+}
+
+function toggleFaq(btn){
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
 }
 
 async function handleSubmit(e){
@@ -519,13 +727,12 @@ async function handleSubmit(e){
       btn.textContent = 'Something went wrong — please email me directly';
       btn.disabled = false;
     }
-  } catch(err) {
+  } catch(err){
     btn.textContent = 'Something went wrong — please email me directly';
     btn.disabled = false;
   }
 }
 
-// Smooth scroll offset for sticky nav
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
