@@ -172,7 +172,14 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" class="logo">MaxNova<span>Tech</span></a>
+    <a href="#" class="logo" style="display:flex;align-items:center;gap:10px">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="34" height="34" rx="9" fill="url(#navgrad)"/>
+        <path d="M9 24V10L17 19L25 10V24" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="navgrad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#1e3a5f"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+      </svg>
+      MaxNova<span>Tech</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#pricing">Pricing</a></li>
@@ -358,7 +365,21 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
 <section id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-img-placeholder" aria-hidden="true">👨‍💻</div>
+      <div class="about-img-placeholder" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;border-radius:16px">
+          <rect width="200" height="200" fill="url(#aboutgrad)"/>
+          <path d="M52 148V56L100 112L148 56V148" stroke="white" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="160" cy="44" r="12" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="40" cy="156" r="8" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="170" cy="150" r="6" fill="rgba(255,255,255,0.2)"/>
+          <defs>
+            <linearGradient id="aboutgrad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1e3a5f"/>
+              <stop offset="1" stop-color="#0ea5e9"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <div>
         <div class="about-label">About</div>
         <div class="about-name">Max Dorman</div>
@@ -396,7 +417,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
           <div class="cd-icon">✉️</div>
           <div>
             <div class="cd-label">Email</div>
-            <div class="cd-val">hello@maxnova.co.uk</div>
+            <div class="cd-val">maxd@ittechs.io</div>
           </div>
         </div>
         <div class="contact-detail">
@@ -466,7 +487,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:40px 24px}
       <a href="#contact">Contact</a>
     </div>
     <div class="footer-copy">
-      © 2026 MaxNova Tech · Sole trader · Kirkcaldy, Scotland · hello@maxnova.co.uk
+      © 2026 MaxNova Tech · Sole trader · Kirkcaldy, Scotland · maxd@ittechs.io
     </div>
   </div>
 </footer>
